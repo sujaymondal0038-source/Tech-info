@@ -1,3 +1,0 @@
-.card{background:var(--surface);padding:24px;border-radius:var(--radius);box-shadow:var(--shadow);transition:.25s}
-.card:hover{transform:translateY(-5px)}
-.hero{text-align:center;padding:80px 20px}
