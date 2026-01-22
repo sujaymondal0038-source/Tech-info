@@ -1,3 +1,6 @@
+.hero {
+  padding: 56px 24px 32px; /* top space reduced */
+}
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
