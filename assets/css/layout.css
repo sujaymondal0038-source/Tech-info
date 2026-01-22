@@ -1,5 +1,11 @@
-.grid {
-  display: grid;
-  gap: 36px; /* card-card distance */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* 🔥 side wall distance control */
+  padding-left: 72px;
+  padding-right: 72px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
