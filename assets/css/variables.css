@@ -5,7 +5,8 @@
 --text:#0f172a;
 --radius:16px;
 --shadow:0 10px 30px rgba(0,0,0,.08);
-}:root {
+}
+:root {
   --bg: #f8fafc;        /* soft SaaS background */
   --surface: #ffffff;  /* card surface */
 }
