@@ -1,5 +1,5 @@
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 48px 32px;
+.grid {
+  display: grid;
+  gap: 36px; /* card-card distance */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
