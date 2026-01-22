@@ -1,3 +1,31 @@
 .card{background:var(--surface);padding:24px;border-radius:var(--radius);box-shadow:var(--shadow);transition:.25s}
 .card:hover{transform:translateY(-5px)}
 .hero{text-align:center;padding:80px 20px}
+.btn-primary {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  margin-top: 24px;
+}
+
+.btn-primary:hover {
+  opacity: 0.92;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.muted {
+  color: var(--text-muted);
+  font-size: 14px;
+}
