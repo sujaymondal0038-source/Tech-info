@@ -59,7 +59,9 @@
     const card = document.createElement("a");
     card.href = `category.html?id=${cat.id}`;
     card.className = "card";
-
+    if (cat.bg) {
+  card.style.backgroundImage = `url(${cat.bg})`;
+}
     card.innerHTML = `
       <div class="category-icon">${cat.icon}</div>
       <h3>${cat.name}</h3>
