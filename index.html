@@ -2,19 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <title>Tech Info – Discover Trusted Tech Services</title>
 
-  <meta name="description"
-        content="Discover trusted tech services, live experts, AI help, and premium resources for everyone.">
-
+  <meta name="description" content="Discover trusted services, live experts, AI help and premium digital solutions.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- CSS -->
+  <!-- Existing CSS -->
   <link rel="stylesheet" href="assets/css/variables.css">
   <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+
+  <!-- EXTRA UI FIX (INLINE – so you don’t need to touch CSS files) -->
+  <style>
+    body {
+      background: #f8fafc;
+    }
+
+    .hero {
+      padding: 48px 24px 32px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      max-width: 640px;
+      margin: 0 auto 24px;
+      color: #475569;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 36px;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #0f172a;
+      color: #e5e7eb;
+      margin-top: 80px;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .site-footer h3,
+    .site-footer h4 {
+      margin-bottom: 12px;
+    }
+
+    .site-footer a {
+      color: #c7d2fe;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .site-footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .site-footer li {
+      margin-bottom: 8px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding: 16px;
+      font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 32px;
+    }
+  </style>
 </head>
 
 <body>
@@ -48,15 +122,16 @@
   <div id="categoryGrid" class="grid"></div>
 
 </main>
-<!-- ================= HELP / CONTACT ================= -->
+
+<!-- ================= FOOTER ================= -->
 <footer class="site-footer">
   <div class="container footer-grid">
 
     <div>
       <h3>Tech Info</h3>
       <p class="muted">
-        A platform for discovering trusted services,
-        experts, and digital solutions.
+        Discover trusted experts, services and digital solutions
+        from one platform.
       </p>
     </div>
 
@@ -72,7 +147,7 @@
     <div>
       <h4>Contact</h4>
       <ul>
-        <li><a href="mailto:support@techinfo.com">Email Us</a></li>
+        <li><a href="mailto:support@techinfo.com">Email</a></li>
         <li><a href="#">Send Message</a></li>
         <li><a href="#">WhatsApp</a></li>
       </ul>
@@ -95,9 +170,11 @@
     const card = document.createElement("a");
     card.href = `category.html?id=${cat.id}`;
     card.className = "card";
+
     if (cat.bg) {
-  card.style.backgroundImage = `url(${cat.bg})`;
-}
+      card.style.backgroundImage = `url(${cat.bg})`;
+    }
+
     card.innerHTML = `
       <div class="category-icon">${cat.icon}</div>
       <h3>${cat.name}</h3>
@@ -106,7 +183,6 @@
 
     grid.appendChild(card);
 
-    /* popup animation – one by one */
     setTimeout(() => {
       card.classList.add("show");
     }, index * 120);
