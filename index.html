@@ -2,30 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <title>Tech Info – Discover Trusted Tech Services</title>
 
   <meta name="description"
-        content="Discover trusted tech services, curated tools, and premium resources for founders, teams, and professionals.">
+        content="Discover trusted tech services, live experts, AI help, and premium resources for everyone.">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/variables.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/layout.css">
 </head>
+
 <body>
 
+<!-- ================= HEADER ================= -->
 <header class="topbar">
   <strong class="logo">Tech Info</strong>
 </header>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <section class="hero">
   <h1>Discover Trusted Tech Services</h1>
   <p>
-    Curated tools, expert services, and premium resources
-    for founders, teams, and professionals.
+    One platform for live experts, digital services,
+    AI help, and premium solutions.
   </p>
 
   <a href="#categories" class="btn-primary">
@@ -33,49 +37,43 @@
   </a>
 </section>
 
-<!-- CATEGORIES -->
+<!-- ================= CATEGORIES ================= -->
 <main class="container" id="categories">
+
   <h2 class="section-title">Categories</h2>
   <p class="section-subtitle">
-    Explore services by category
+    Choose a category to explore services
   </p>
 
   <div id="categoryGrid" class="grid"></div>
+
 </main>
 
+<!-- ================= SCRIPT ================= -->
 <script type="module">
   import { categories } from "./assets/js/data.js";
 
   const grid = document.getElementById("categoryGrid");
 
-  categories.forEach(cat => {
+  categories.forEach((cat, index) => {
     const card = document.createElement("a");
     card.href = `category.html?id=${cat.id}`;
     card.className = "card";
 
     card.innerHTML = `
+      <div class="category-icon">${cat.icon}</div>
       <h3>${cat.name}</h3>
-      <p class="muted">Browse related services and tools</p>
+      <p>${cat.desc}</p>
     `;
 
     grid.appendChild(card);
-  });
-<script type="module">
-  import { categories } from "./assets/js/data.js";
 
-  const grid = document.getElementById("categoryGrid");
-
-  categories.forEach(cat => {
-    const card = document.createElement("a");
-    card.href = `category.html?id=${cat.id}`;
-    card.className = "card";
-
-    card.innerHTML = `
-      <h3>${cat.name}</h3>
-      <p class="muted">Browse related services and tools</p>
-    `;
-
-    grid.appendChild(card);
+    /* popup animation – one by one */
+    setTimeout(() => {
+      card.classList.add("show");
+    }, index * 120);
   });
 </script>
 
+</body>
+</html>
