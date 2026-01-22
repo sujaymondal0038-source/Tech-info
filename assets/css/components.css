@@ -34,3 +34,28 @@
   margin-bottom: 8px;
   opacity: 0.9;
 }
+.card {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: #ffffff;
+}
+
+/* dark overlay for text readability */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.7)
+  );
+  border-radius: inherit;
+}
+
+.card > * {
+  position: relative;
+  z-index: 1;
+}
