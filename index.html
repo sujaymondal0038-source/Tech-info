@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tech Info – Discover Tech Services</title>
+  <meta name="description" content="Discover trusted tech services and premium resources.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+</head>
+<body>
+<header class="topbar"><h1>Tech Info</h1></header>
+<section class="hero">
+  <h1>Discover Trusted Tech Services</h1>
+  <p>Built for founders, teams, and professionals.</p>
+</section>
+<main class="container">
+  <h2>Categories</h2>
+  <div id="categoryGrid" class="grid"></div>
+</main>
+<script type="module">
+import { categories } from "./assets/js/data.js";
+const grid = document.getElementById("categoryGrid");
+categories.forEach(c=>{
+  const a=document.createElement("a");
+  a.href=`category.html?id=${c.id}`;
+  a.className="card";
+  a.innerHTML=`<h3>${c.name}</h3>`;
+  grid.appendChild(a);
+});
+</script>
+</body>
+</html>
